@@ -7,9 +7,9 @@ def index():
     return "<h1>Hello World</h1>"
 
 
-@app.route("/charan")
-def charan():
-    return "<h1>Hello Charan!</h1>"
-
+@app.route("/<string:name>")
+def hello(name):
+    name = name.capitalize()
+    return "<h1>Hello {}!</h1>".format(name)
 if __name__ == '__main__':
     app.run()
